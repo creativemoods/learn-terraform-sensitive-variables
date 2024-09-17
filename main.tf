@@ -41,7 +41,7 @@ module "lb_security_group" {
   source  = "terraform-aws-modules/security-group/aws//modules/web"
   version = "5.1.2"
 
-  name        = "lb-sg-project-alpha-dev"
+  name        = "lb-sg-studentx-dev"
   description = "Security group for load balancer with HTTP ports open within VPC"
   vpc_id      = module.vpc.vpc_id
 
@@ -58,7 +58,7 @@ module "elb_http" {
   version = "4.0.2"
 
   # Ensure load balancer name is unique
-  name = "lb-${random_string.lb_id.result}-project-alpha-dev"
+  name = "lb-${random_string.lb_id.result}-studentx-dev"
 
   internal = false
 
